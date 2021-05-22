@@ -40,7 +40,7 @@ export default {
       menuItems: [
         { title: 'Home', path: '/home', icon: 'mdi-home' },
         { title: 'Product List', path: '/product-list', icon: 'mdi-format-list-bulleted' },
-        { title: 'Sign In', path: '/signin', icon: 'mdi-home' }
+        { title: 'Test Vuex', path: '/test-vuex', icon: 'mdi-test-tube' }
       ]
     }
   }
