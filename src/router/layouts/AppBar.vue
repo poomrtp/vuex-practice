@@ -38,10 +38,21 @@ export default {
       appTitle: 'Demo App',
       sidebar: false,
       menuItems: [
-        { title: 'Home', path: '/home', icon: 'mdi-home' },
+        { title: 'Home', path: '/', icon: 'mdi-home' },
         { title: 'Product List', path: '/product-list', icon: 'mdi-format-list-bulleted' },
         { title: 'Test Vuex', path: '/test-vuex', icon: 'mdi-test-tube' }
       ]
+    }
+  },
+  methods: {
+    login() {
+      this.$gtag.event('login', { method: 'Google' })
+    },
+    track() {
+      this.$gtag.event('event', 'aaa', {
+        event_category: 'bbb',
+        event_label: 'ccc'
+      })
     }
   }
 }

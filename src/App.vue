@@ -20,6 +20,17 @@ export default {
     layout() {
       return this.$route.meta.layout
     }
+  },
+  methods: {
+    login() {
+      this.$gtag.event('login', { method: 'Google' })
+    },
+    track() {
+      this.$gtag.event('event', 'aaa', {
+        event_category: 'bbb',
+        event_label: 'ccc'
+      })
+    }
   }
 }
 </script>
