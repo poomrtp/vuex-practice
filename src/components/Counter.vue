@@ -24,17 +24,19 @@ export default {
   methods: {
     add() {
       this.$store.dispatch('addAction')
+      this.track()
     },
     minus() {
       this.$store.dispatch('minusAction')
+      this.track()
     },
     login() {
       this.$gtag.event('login', { method: 'Google' })
     },
     track() {
-      this.$gtag.event('event', 'aaa', {
-        event_category: 'bbb',
-        event_label: 'ccc'
+      this.$gtag.event('btn tracker', {
+        event_category: 'btn',
+        event_label: 'btn'
       })
     }
   }

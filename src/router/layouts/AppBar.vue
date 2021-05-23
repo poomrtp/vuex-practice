@@ -50,7 +50,7 @@ export default {
     },
     track() {
       this.$gtag.event('nav-bar-click', {
-        event_category: `${this.menuItems.title} : menu`,
+        event_category: `${this.menuItems.title}`,
         event_label: this.menuItems.title,
         value: 1
       })
