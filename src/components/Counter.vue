@@ -39,7 +39,6 @@ export default {
       this.$gtag.event('login', { method: 'Google' })
     },
     track() {
-      console.log(this.trackBtn)
       this.$gtag.event(this.trackBtn, {
         event_category: 'btn',
         event_label: 'btn',
