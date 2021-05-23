@@ -4,7 +4,15 @@ import Vuex from 'vuex'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import router from './router'
-
+import VueGtag from 'vue-gtag'
+Vue.use(VueGtag, {
+  config: {
+    id: ' ',
+    params: {
+      send_page_view: false
+    }
+  }
+})
 Vue.use(Vuex)
 Vue.config.productionTip = false
 new Vue({

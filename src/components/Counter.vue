@@ -27,6 +27,9 @@ export default {
     },
     minus() {
       this.$store.dispatch('minusAction')
+    },
+    login() {
+      this.$gtag.event('login', { method: 'Google' })
     }
   }
 }
