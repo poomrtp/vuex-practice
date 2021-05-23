@@ -21,27 +21,35 @@ export default {
   },
   data() {
     return {
-      trackBtn: null
+      trackBtn: []
     }
   },
   methods: {
     add() {
       this.$store.dispatch('addAction')
-      this.trackBtn = 'add-button'
+      this.trackBtn = {
+        event: 'add-button',
+        event_category: 'click',
+        event_label: 'add-button'
+      }
       this.track()
     },
     minus() {
       this.$store.dispatch('minusAction')
-      this.trackBtn = 'minus-button'
+      this.trackBtn = {
+        event: 'minus-button',
+        event_category: 'click',
+        event_label: 'minus-button'
+      }
       this.track()
     },
     login() {
       this.$gtag.event('login', { method: 'Google' })
     },
     track() {
-      this.$gtag.event(this.trackBtn, {
-        event_category: 'btn',
-        event_label: 'btn',
+      this.$gtag.event(this.trackBtn.event, {
+        event_category: this.trackBtn.event_category,
+        event_label: this.trackBtn.event_label,
         value: store.getters.getCount
       })
     }
