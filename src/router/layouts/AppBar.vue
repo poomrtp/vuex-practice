@@ -22,7 +22,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
-        <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path">
+        <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path" @click="track">
           <v-icon left dark>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
@@ -49,9 +49,10 @@ export default {
       this.$gtag.event('login', { method: 'Google' })
     },
     track() {
-      this.$gtag.event('event', 'aaa', {
-        event_category: 'bbb',
-        event_label: 'ccc'
+      this.$gtag.event('nav-bar-click', {
+        event_category: `${this.menuItems.title} : menu`,
+        event_label: this.menuItems.title,
+        value: 1
       })
     }
   }
