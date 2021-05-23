@@ -7,7 +7,7 @@ import router from './router'
 import VueGtag from 'vue-gtag'
 Vue.use(VueGtag, {
   config: {
-    id: ' ',
+    id: 'G-88VRSTQCQE',
     params: {
       send_page_view: false
     }
