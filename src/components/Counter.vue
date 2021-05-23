@@ -2,16 +2,17 @@
   <div>
     <h1>{{ $store.getters.getCount }}</h1>
     <span>
-      <minus-button @click="minus"></minus-button>
+      <minus-button @click="minus('minus-button')"></minus-button>
     </span>
     <span>
-      <add-button @click="add"></add-button>
+      <add-button @click="add('add-button')"></add-button>
     </span>
   </div>
 </template>
 <script>
 import AddButton from './AddButton'
 import MinusButton from './MinusButton'
+import store from '@/store'
 
 export default {
   components: {
@@ -22,21 +23,23 @@ export default {
     return {}
   },
   methods: {
-    add() {
+    add(param) {
       this.$store.dispatch('addAction')
-      this.track()
+      this.track(param)
     },
-    minus() {
+    minus(param) {
       this.$store.dispatch('minusAction')
-      this.track()
+      this.track(param)
     },
     login() {
       this.$gtag.event('login', { method: 'Google' })
     },
-    track() {
-      this.$gtag.event('btn tracker', {
+    track(params) {
+      console.log(params)
+      this.$gtag.event(params, {
         event_category: 'btn',
-        event_label: 'btn'
+        event_label: 'btn',
+        value: store.getters.getCount
       })
     }
   }
