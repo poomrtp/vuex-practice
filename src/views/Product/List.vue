@@ -1,11 +1,27 @@
 <template>
   <div>
-    <h1 style="margin-top: 300px">List</h1>
+    <!-- <component :is="listComponents"></component> -->
+    <product-list></product-list>
   </div>
 </template>
 
 <script>
-export default {}
+import ProductList from '@/components/ProductList'
+// import store from '@/store'
+export default {
+  components: {
+    ProductList
+  },
+  async mounted() {
+    await this.fetchData()
+  },
+  methods: {
+    listComponents() {},
+    fetchData() {
+      this.$store.dispatch('fetchProduct')
+    }
+  }
+}
 </script>
 
 <style></style>

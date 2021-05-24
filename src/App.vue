@@ -1,8 +1,10 @@
 <template>
-  <v-app>
+  <div>
     <component :is="layout"></component>
-    <router-view></router-view>
-  </v-app>
+    <v-container>
+      <router-view></router-view>
+    </v-container>
+  </div>
 </template>
 
 <script>

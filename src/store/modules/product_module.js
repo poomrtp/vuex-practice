@@ -1,12 +1,7 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
-// import modules from './modules'
-
-Vue.use(Vuex)
-
-const store = new Vuex.Store({
+const productModule = new Vuex.Store({
   state: {
     count: 0,
     products: [],
@@ -59,11 +54,15 @@ const store = new Vuex.Store({
       const response = await axios
         .get('https://testapibackend.herokuapp.com/product/get')
         .then((response) => {
+          // console.log(response)
+          // commit('setProductList', response.data.data)
           return response.data.data
         })
+      // let keys = Object.keys(response[0])
+      // console.log(keys)
       commit('setProductList', response)
     }
   },
   modules: {}
 })
-export default store
+export default productModule
