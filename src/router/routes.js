@@ -22,6 +22,14 @@ const routes = [
       layout: 'nav-layout'
     },
     component: () => import('@/components/Counter.vue')
+  },
+  {
+    path: '/create-product',
+    name: 'test-vuex',
+    meta: {
+      layout: 'nav-layout'
+    },
+    component: () => import('@/views/Product/Create.vue')
   }
 ]
 export default routes

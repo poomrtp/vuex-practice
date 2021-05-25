@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="pt-2">
     <v-card-title>
       <v-text-field
         v-model="search"
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     searchProduct() {
-      console.log(this.search)
+      this.$store.dispatch('fetchProduct', this.search)
     }
   }
 }

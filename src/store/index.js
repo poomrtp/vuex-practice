@@ -55,14 +55,28 @@ const store = new Vuex.Store({
       context.commit('setProductListHeader', this.getters.getProductHeader)
       context.commit('setProductList', this.getters.getProduct)
     },
-    async fetchProduct({ commit }) {
-      const response = await axios
-        .get('https://testapibackend.herokuapp.com/product/get')
-        .then((response) => {
-          return response.data.data
-        })
-      commit('setProductList', response)
+    async fetchProduct({ commit }, params) {
+      // console.log(params)
+      if (params != null) {
+        const response = await axios
+          .post(`https://testapibackend.herokuapp.com/product/search`, { name: params })
+          .then((response) => {
+            return response.data.data
+          })
+        commit('setProductList', response)
+      } else {
+        const response = await axios
+          .get('https://testapibackend.herokuapp.com/product/get')
+          .then((response) => {
+            return response.data.data
+          })
+        commit('setProductList', response)
+      }
     }
+    // addProduct({ commit }, params) {
+
+    //   commit('setProductList', response)
+    // }
   },
   modules: {}
 })

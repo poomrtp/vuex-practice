@@ -2,22 +2,20 @@
   <div>
     <h1>{{ $store.getters.getCount }}</h1>
     <span>
-      <minus-button @click="minus()"></minus-button>
+      <base-button @click="minus()">{{ '-' }}</base-button>
     </span>
     <span>
-      <add-button @click="add()"></add-button>
+      <base-button @click="add()">{{ '+' }}</base-button>
     </span>
   </div>
 </template>
 <script>
-import AddButton from './AddButton'
-import MinusButton from './MinusButton'
+import BaseButton from './BaseButton'
 import store from '@/store'
 
 export default {
   components: {
-    AddButton,
-    MinusButton
+    BaseButton
   },
   data() {
     return {

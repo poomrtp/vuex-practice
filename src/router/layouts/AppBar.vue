@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="sidebar" app>
+    <v-navigation-drawer v-model="sidebar" app class="hidden-lg-and-up">
       <v-list>
         <v-list-item v-for="item in menuItems" :key="item.title" :to="item.path">
           <v-list-item-action>
