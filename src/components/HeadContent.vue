@@ -1,24 +1,18 @@
 <template>
-  <v-toolbar class="_akt-header" :extension-height="extensionHeight" :flat="flat">
+  <v-toolbar class="mb-12" :flat="flat">
     <v-toolbar-title>
-      <router-link v-if="backLink" :to="backLink">
+      <!-- <router-link v-if="backLink" :to="backLink">
         <v-icon class="mt-n1 mr-3" color="primary">
           mdi-arrow-left
         </v-icon>
-        <span class="_label font-weight-bold primary--text">
+        <span class="font-weight-bold primary--text">
           {{ label }}
         </span>
-      </router-link>
-      <div v-else class="_label font-weight-bold primary--text">
+      </router-link> -->
+      <div class="font-weight-bold primary--text">
         {{ label }}
       </div>
     </v-toolbar-title>
-
-    <slot v-if="isShowSlotLeft" name="left"></slot>
-
-    <v-spacer v-if="!isShowSlotLeft"></v-spacer>
-
-    <slot name="center"></slot>
 
     <v-spacer v-if="hasSlot('right')"></v-spacer>
 
@@ -32,7 +26,7 @@
 
 <script>
 export default {
-  name: 'AktHeader',
+  name: 'HeadContent',
   props: {
     vertical: {
       type: Boolean,

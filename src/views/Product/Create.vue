@@ -1,46 +1,53 @@
 <template>
   <div id="gr-create">
-    <v-card class="mt-12">
-      <akt-header label="Add Product">
-        <div slot="right">
-          <v-btn color="light-blue darken-4" min-width="150" rounded large outlined>
-            <span class="subtitle-1 font-weight-bold">
-              Undo
-            </span>
-          </v-btn>
-          <v-btn class="ml-4" color="light-blue darken-4" min-width="150" rounded large depressed>
-            <span class="subtitle-1 font-weight-bold white--text">
-              Add
-            </span>
-          </v-btn>
-        </div>
-      </akt-header>
-
-      <v-row>
-        <v-col class="my-md-6">
-          <v-text-field label="Product Name" :rules="rules" hide-details="auto"></v-text-field>
-        </v-col>
-        <v-col>
-          <v-text-field label="Price" :rules="rules" hide-details="auto"></v-text-field>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col class="mt-12">
-          <v-text-field label="Quantity" :rules="rules" hide-details="auto"></v-text-field>
-        </v-col>
-        <v-col>
-          <v-select :items="items" label="Select Status"></v-select>
-        </v-col>
-      </v-row>
+    <head-content label="Add Product">
+      <div slot="right">
+        <v-btn class="mr-4" color="light darken-4" min-width="150" outlined>
+          <span class="subtitle-1 font-weight-bold">
+            Undo
+          </span>
+        </v-btn>
+        <v-btn class="ml-4" color="light darken-4" min-width="150" depressed>
+          <span class="subtitle-1 font-weight-bold white--text">
+            Add
+          </span>
+        </v-btn>
+      </div>
+    </head-content>
+    <v-card style="margin-top: 24px; padding: 6px" class="mt-12">
+      <div class="mt-4">
+        <v-row>
+          <v-col class="my-12">
+            <v-text-field label="Product Name" :rules="rules" hide-details="auto"></v-text-field>
+          </v-col>
+          <v-col>
+            <v-text-field label="Price" :rules="rules" hide-details="auto"></v-text-field>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="mt-12">
+            <v-text-field label="Quantity" :rules="rules" hide-details="auto"></v-text-field>
+          </v-col>
+          <v-col>
+            <!-- <v-select :items="items" label="Standard"></v-select> -->
+            <v-select
+              :items="productStatus"
+              item-text="state"
+              item-value="state"
+              label="Select Status"
+            ></v-select>
+          </v-col>
+        </v-row>
+      </div>
     </v-card>
   </div>
 </template>
 
 <script>
-import AktHeader from '@/components/AktHeader'
+import HeadContent from '@/components/HeadContent'
 export default {
   components: {
-    AktHeader
+    HeadContent
   },
   data() {
     return {
@@ -48,7 +55,14 @@ export default {
         (value) => !!value || 'Required.',
         (value) => (value && value.length >= 3) || 'Min 3 characters'
       ],
-      items: ['On sale', 'Coming soon']
+      productStatus: [
+        {
+          state: 'On sale'
+        },
+        {
+          state: 'Coming soon'
+        }
+      ]
     }
   }
 }

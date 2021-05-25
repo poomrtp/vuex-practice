@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <v-main>
     <component :is="layout"></component>
     <v-container>
       <router-view></router-view>
     </v-container>
-  </div>
+  </v-main>
 </template>
 
 <script>
