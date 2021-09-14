@@ -50,6 +50,11 @@ export default {
         event_label: this.trackBtn.event_label,
         value: store.getters.getCount
       })
+      this.$gtag.screenview({
+        app_name: 'Test GA App',
+        screen_name: 'Vuex Page',
+      })
+      this.$gtag.pageview(this.$route)
     }
   }
 }

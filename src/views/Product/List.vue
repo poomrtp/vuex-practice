@@ -39,6 +39,13 @@ export default {
     addProduct() {
       // this.$store.dispatch('fetchProduct')
       console.log('add')
+    },
+    track () {
+      this.$gtag.screenview({
+        app_name: 'Test GA App',
+        screen_name: 'List',
+      })
+      this.$gtag.pageview(this.$route)
     }
   }
 }

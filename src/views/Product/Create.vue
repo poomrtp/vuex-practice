@@ -64,6 +64,15 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    track () {
+      this.$gtag.screenview({
+        app_name: 'Test GA App',
+        screen_name: 'Create',
+      })
+      this.$gtag.pageview(this.$route)
+    }
   }
 }
 </script>

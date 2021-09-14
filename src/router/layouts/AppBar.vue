@@ -54,6 +54,7 @@ export default {
         event_label: this.menuItems.title,
         value: 1
       })
+      this.$gtag.pageview(this.$route)
     }
   }
 }
