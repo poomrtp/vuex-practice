@@ -35,7 +35,7 @@ export default {
   name: 'AppBar',
   data() {
     return {
-      appTitle: 'Demo App',
+      appTitle: 'Test GA App',
       sidebar: false,
       menuItems: [
         { title: 'Home', path: '/', icon: 'mdi-home' },
