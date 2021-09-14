@@ -48,14 +48,14 @@ export default {
     login() {
       this.$gtag.event('login', { method: 'Google' })
     },
-    track() {
-      this.$gtag.event('nav-bar-click', {
-        event_category: `${this.menuItems.title}`,
-        event_label: this.menuItems.title,
-        value: 1
-      })
-      this.$gtag.pageview(this.$route)
-    }
+    // track() {
+    //   this.$gtag.event('nav-bar-click', {
+    //     event_category: `${this.menuItems.title}`,
+    //     event_label: this.menuItems.title,
+    //     value: 1
+    //   })
+    //   this.$gtag.pageview(this.$route)
+    // }
   }
 }
 </script>
