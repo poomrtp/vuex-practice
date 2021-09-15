@@ -7,7 +7,7 @@ import router from './router'
 import VueGtag from 'vue-gtag'
 Vue.use(VueGtag, {
   // pageTrackerEnabled: false, // page tracker disabled
-  // pageTrackerEnabled: true, // page tracker enabled
+  pageTrackerEnabled: true, // page tracker enabled
   // pageTrackerScreenviewEnabled: true,
   config: {
     id: 'G-88VRSTQCQE',
