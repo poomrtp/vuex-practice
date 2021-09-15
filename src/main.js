@@ -6,7 +6,7 @@ import vuetify from './plugins/vuetify'
 import router from './router'
 import VueGtag from 'vue-gtag'
 Vue.use(VueGtag, {
-  // pageTrackerEnabled: true,
+  pageTrackerEnabled: false,
   config: {
     id: 'G-88VRSTQCQE',
     params: {
