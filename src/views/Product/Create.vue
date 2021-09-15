@@ -65,6 +65,9 @@ export default {
       ]
     }
   },
+  created() {
+    this.track()
+  },
   methods: {
     track () {
       this.$gtag.screenview({

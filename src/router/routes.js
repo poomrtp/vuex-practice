@@ -24,6 +24,14 @@ const routes = [
     component: () => import('@/components/Counter.vue')
   },
   {
+    path: '/test-ga',
+    name: 'test-ga',
+    meta: {
+      layout: 'nav-layout'
+    },
+    component: () => import('@/views/GA/Index.vue')
+  },
+  {
     path: '/create-product',
     name: 'test-vuex',
     meta: {

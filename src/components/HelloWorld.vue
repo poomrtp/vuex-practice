@@ -26,6 +26,9 @@ export default {
   name: 'HelloWorld',
 
   data: () => ({}),
+  created() {
+    this.track()
+  },
   methods: {
     track () {
       this.$gtag.screenview({

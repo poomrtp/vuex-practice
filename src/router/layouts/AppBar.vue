@@ -22,7 +22,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
-        <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path" @click="track">
+        <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path" @click="track()">
           <v-icon left dark>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
@@ -40,22 +40,20 @@ export default {
       menuItems: [
         { title: 'Home', path: '/', icon: 'mdi-home' },
         { title: 'Product List', path: '/product-list', icon: 'mdi-format-list-bulleted' },
+        { title: 'Test GA', path: '/test-ga', icon: 'mdi-test-tube' },
         { title: 'Test Vuex', path: '/test-vuex', icon: 'mdi-test-tube' }
       ]
     }
   },
   methods: {
-    login() {
-      this.$gtag.event('login', { method: 'Google' })
-    },
-    // track() {
-    //   this.$gtag.event('nav-bar-click', {
-    //     event_category: `${this.menuItems.title}`,
-    //     event_label: this.menuItems.title,
-    //     value: 1
-    //   })
-    //   this.$gtag.pageview(this.$route)
-    // }
+    track() {
+      // this.$gtag.event('nav-bar-click', {
+      //   event_category: `${this.menuItems.title}`,
+      //   event_label: this.menuItems.title,
+      //   value: 1
+      // })
+      // this.$gtag.pageview(this.$route)
+    }
   }
 }
 </script>

@@ -31,6 +31,9 @@ export default {
   async mounted() {
     this.fetchData()
   },
+  created() {
+    this.track()
+  },
   methods: {
     listComponents() {},
     fetchData() {
@@ -41,11 +44,11 @@ export default {
       console.log('add')
     },
     track () {
-      this.$gtag.screenview({
-        app_name: 'Test GA App',
-        screen_name: 'List',
-      })
-      this.$gtag.pageview(this.$route)
+      // this.$gtag.screenview({
+      //   app_name: 'Test GA App',
+      //   screen_name: 'List',
+      // })
+      // this.$gtag.pageview(this.$route)
     }
   }
 }

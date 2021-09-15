@@ -22,6 +22,9 @@ export default {
       trackBtn: []
     }
   },
+  created() {
+    this.track()
+  },
   methods: {
     add() {
       this.$store.dispatch('addAction')
@@ -40,9 +43,6 @@ export default {
         event_label: 'minus-button'
       }
       this.track()
-    },
-    login() {
-      this.$gtag.event('login', { method: 'Google' })
     },
     track() {
       this.$gtag.event(this.trackBtn.event, {
