@@ -25,6 +25,15 @@
 export default {
   name: 'HelloWorld',
 
-  data: () => ({})
+  data: () => ({}),
+  methods: {
+    track () {
+      this.$gtag.screenview({
+        app_name: 'Test GA App',
+        screen_name: 'Home',
+      })
+      this.$gtag.pageview(this.$route)
+    }
+  }
 }
 </script>
